@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+<defs>
+  <style type="text/css">
+    .st194{fill:#7C5CFC;stroke:#5CB8FC;stroke-width:0.6317;stroke-miterlimit:10;}
+    .st23{fill:#FFFFFF;}
+    .logo-breathe {
+      animation: breathe 2.5s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+  </style>
+</defs>
+<g>
+  <rect class="st194" x="1.5" y="1.5" width="27" height="27" rx="6" />
+  <g class="logo-breathe">
+    <!-- Stylized 'K' -->
+    <path class="st23" d="M9,7 h3 v16 h-3 z" />
+    <path class="st23" d="M12,14.5 l6.5,-7.5 h4 l-7.5,8.5 l8.5,7.5 h-4.2 l-7.3,-7 z" />
+  </g>
+</g>
+</svg>
