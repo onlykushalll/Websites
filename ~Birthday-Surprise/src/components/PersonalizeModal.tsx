@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { X, Sparkles, Upload, Check, Heart, MessageSquare, Image as ImageIcon } from 'lucide-react';
 import { BirthdayData, WishCard, MemoryPhoto } from '../types';
@@ -17,8 +17,14 @@ export const PersonalizeModal: React.FC<PersonalizeModalProps> = ({
   data,
   onSave,
 }) => {
-  const [formData, setFormData] = useState<BirthdayData>({ ...data });
+  const [formData, setFormData] = useState<BirthdayData>(() => JSON.parse(JSON.stringify(data)));
   const [activeTab, setActiveTab] = useState<'basic' | 'wishes' | 'photos'>('basic');
+
+  useEffect(() => {
+    if (isOpen) {
+      setFormData(JSON.parse(JSON.stringify(data)));
+    }
+  }, [isOpen, data]);
 
   if (!isOpen) return null;
 

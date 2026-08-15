@@ -192,18 +192,27 @@ export const FinalPageOfLove: React.FC<FinalPageOfLoveProps> = ({
     }
   };
 
-  const handleShare = () => {
+  const handleShare = async () => {
     soundManager.playChime();
     if (navigator.share) {
-      navigator.share({
-        title: `A Final Page of Love for ${data.recipientName} ✨`,
-        text: `Check out this magical birthday celebration keepsake created with love!`,
-        url: window.location.href,
-      }).catch(() => {});
-    } else {
-      navigator.clipboard.writeText(window.location.href);
+      try {
+        await navigator.share({
+          title: `A Final Page of Love for ${data.recipientName} ✨`,
+          text: `Check out this magical birthday celebration keepsake created with love!`,
+          url: window.location.href,
+        });
+        return;
+      } catch {
+        // Fallback to clipboard if share was dismissed or unsupported
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(window.location.href);
       setCopied(true);
       setTimeout(() => setCopied(false), 2400);
+    } catch {
+      // ignore
     }
   };
 

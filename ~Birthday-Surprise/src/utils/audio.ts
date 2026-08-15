@@ -297,8 +297,17 @@ class SoundManager {
 
     this.bgmPlaying = true;
     this.currentTheme = theme;
+
+    if (this.bgmGain) {
+      try {
+        this.bgmGain.disconnect();
+      } catch {
+        // ignore
+      }
+    }
+
     this.bgmGain = this.ctx.createGain();
-    this.bgmGain.gain.value = 0.85; // Strong, clear playback volume
+    this.bgmGain.gain.setValueAtTime(0.85, this.ctx.currentTime);
     this.bgmGain.connect(this.masterGain);
 
     // Full Happy Birthday melody sheet with chords & bass notes
@@ -417,6 +426,23 @@ class SoundManager {
     if (this.bgmTimeout) {
       clearTimeout(this.bgmTimeout);
       this.bgmTimeout = null;
+    }
+    if (this.bgmGain && this.ctx) {
+      try {
+        const now = this.ctx.currentTime;
+        this.bgmGain.gain.setValueAtTime(this.bgmGain.gain.value, now);
+        this.bgmGain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+        const oldGain = this.bgmGain;
+        setTimeout(() => {
+          try {
+            oldGain.disconnect();
+          } catch {
+            // ignore
+          }
+        }, 100);
+      } catch {
+        // ignore
+      }
     }
   }
 

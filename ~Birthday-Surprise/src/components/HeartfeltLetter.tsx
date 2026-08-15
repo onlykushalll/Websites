@@ -20,7 +20,7 @@ export const HeartfeltLetter: React.FC<HeartfeltLetterProps> = ({
   const [selectedPhoto, setSelectedPhoto] = useState<MemoryPhoto | null>(null);
   const [isFanned, setIsFanned] = useState(false);
   const [photoList, setPhotoList] = useState<MemoryPhoto[]>([]);
-  const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const defaultPhotos: MemoryPhoto[] = [
     {
