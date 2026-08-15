@@ -38,3 +38,7 @@ Thumbs.db
 .env.production.local
 *.env
 *.bak
+
+# Agent logs and temporary traces
+.agents/
+*/.agents/

@@ -10,6 +10,8 @@ Each project serves as an architectural template for modern, high-performance we
 
 | Project | Directory | Description | Key Tech Stack | Features |
 | :--- | :--- | :--- | :--- | :--- |
+| **Birthday Surprise** | [`~Birthday-Surprise`](./~Birthday-Surprise) | Interactive keepsake birthday website with fairy lights, cake slicing, and 3D card decks. | React 19, Vite, Motion, Tailwind CSS v4, Web Audio | Dark room torch, 3D interactive cake, flip card deck, handwritten letter, love coupons & fireworks. |
+| **Valentime** | [`~Valentime`](./~Valentime) | Interactive "Be My Valentine" proposal experience with dynamic date planner. | React 19, Vite, Motion, Tailwind CSS v4 | Interactive proposal flow, date planner, cute responsive micro-animations. |
 | **Aura** | [`~Aura`](./~Aura) | Ultra-premium 3D cosmetics & makeup landing page with luxury aesthetics. | React, Vite, Three.js, GSAP, Tailwind CSS | Interactive 3D product models, custom cursor, scroll parallax, magnetic elements. |
 | **Kairos AI** | [`~KairosAi`](./~KairosAi) | Clean, futuristic landing page for an autonomous AI agent deployment platform. | Next.js 16+, React 19, Three.js, Framer Motion, Prisma | Aurora gradients, interactive particle fields, smooth scroll, responsive dynamic routing. |
 | **Dcozi** | [`~DCOZI`](./~DCOZI) | Digital signage, smart kiosk, and digital podium manufacturing landing page. | React, Vite, Lenis Scroll, Tailwind CSS | Smooth inertial scrolling, contact portal, dynamic marquee, product scroll showcase. |
