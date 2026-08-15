@@ -22,12 +22,13 @@ const BULB_COLORS = [
   { main: '#FFA502', glow: 'rgba(255, 165, 2, 0.85)', dark: '#4a3205' },   // Yellow
 ];
 
-export const FairyLights: React.FC<FairyLightsProps> = ({ isOn }) => {
+export const FairyLights: React.FC<FairyLightsProps> = ({ isOn, onHoverAnyBulb }) => {
   const [hoveredBulb, setHoveredBulb] = useState<number | null>(null);
 
   const handleBulbHover = (idx: number) => {
     setHoveredBulb(idx);
     soundManager.playHeartPop();
+    onHoverAnyBulb?.();
   };
 
   return (

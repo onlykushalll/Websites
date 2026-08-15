@@ -21,6 +21,16 @@ export const InteractiveCake: React.FC<InteractiveCakeProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const startXRef = useRef<number | null>(null);
+  const smokeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cutCompleteTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clean up timeouts on unmount
+  React.useEffect(() => {
+    return () => {
+      if (smokeTimeoutRef.current) clearTimeout(smokeTimeoutRef.current);
+      if (cutCompleteTimeoutRef.current) clearTimeout(cutCompleteTimeoutRef.current);
+    };
+  }, []);
 
   // Handle Candle Blow Out
   const handleBlowCandle = () => {
@@ -28,7 +38,8 @@ export const InteractiveCake: React.FC<InteractiveCakeProps> = ({
     soundManager.playCandleBlow();
     setCandleBlown(true);
     setSmokePuff(true);
-    setTimeout(() => setSmokePuff(false), 2000);
+    if (smokeTimeoutRef.current) clearTimeout(smokeTimeoutRef.current);
+    smokeTimeoutRef.current = setTimeout(() => setSmokePuff(false), 2000);
   };
 
   // Handle Drag Cutting
@@ -65,6 +76,7 @@ export const InteractiveCake: React.FC<InteractiveCakeProps> = ({
   };
 
   const completeCut = () => {
+    if (isCutComplete) return;
     setIsCutComplete(true);
     setCutProgress(100);
     soundManager.playConfettiPop();
@@ -77,7 +89,8 @@ export const InteractiveCake: React.FC<InteractiveCakeProps> = ({
       colors: ['#FF6B81', '#FFA502', '#2ED573', '#1E90FF', '#FD79A8', '#FFEAA7'],
     });
 
-    setTimeout(() => {
+    if (cutCompleteTimeoutRef.current) clearTimeout(cutCompleteTimeoutRef.current);
+    cutCompleteTimeoutRef.current = setTimeout(() => {
       onCutComplete();
     }, 1400);
   };

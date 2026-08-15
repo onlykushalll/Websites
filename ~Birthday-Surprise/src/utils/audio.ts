@@ -165,9 +165,11 @@ class SoundManager {
     osc.stop(now + 0.13);
 
     // Sparkling celebration fanfare arpeggio (C5 -> E5 -> G5 -> C6 -> E6)
+    const ctx = this.ctx;
+    const masterGain = this.masterGain;
     [523.25, 659.25, 783.99, 1046.50, 1318.51].forEach((freq, i) => {
-      const chimeOsc = this.ctx!.createOscillator();
-      const chimeGain = this.ctx!.createGain();
+      const chimeOsc = ctx.createOscillator();
+      const chimeGain = ctx.createGain();
       const chimeTime = now + 0.04 + i * 0.07;
 
       chimeOsc.type = 'triangle';
@@ -177,7 +179,7 @@ class SoundManager {
       chimeGain.gain.exponentialRampToValueAtTime(0.001, chimeTime + 0.5);
 
       chimeOsc.connect(chimeGain);
-      chimeGain.connect(this.masterGain!);
+      chimeGain.connect(masterGain);
 
       chimeOsc.start(chimeTime);
       chimeOsc.stop(chimeTime + 0.52);
@@ -214,12 +216,14 @@ class SoundManager {
     this.initCtx();
     if (!this.ctx || !this.masterGain) return;
 
-    const now = this.ctx.currentTime;
+    const ctx = this.ctx;
+    const masterGain = this.masterGain;
+    const now = ctx.currentTime;
     const notes = [587.33, 739.99, 880.00, 1174.66, 1479.98, 1760.00];
 
     notes.forEach((freq, idx) => {
-      const osc = this.ctx!.createOscillator();
-      const gain = this.ctx!.createGain();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
       const noteTime = now + idx * 0.07;
 
       osc.type = 'sine';
@@ -229,7 +233,7 @@ class SoundManager {
       gain.gain.exponentialRampToValueAtTime(0.001, noteTime + 0.8);
 
       osc.connect(gain);
-      gain.connect(this.masterGain!);
+      gain.connect(masterGain);
 
       osc.start(noteTime);
       osc.stop(noteTime + 0.85);

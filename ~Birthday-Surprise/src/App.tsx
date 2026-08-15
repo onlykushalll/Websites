@@ -25,6 +25,19 @@ import { PersonalizeModal } from './components/PersonalizeModal';
 
 export default function App() {
   const [data, setData] = useState<BirthdayData>(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('birthday_surprise_data') || localStorage.getItem('cutiepage_birthday_data');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (parsed && parsed.recipientName) {
+            return parsed;
+          }
+        }
+      } catch (e) {
+        console.warn('Could not parse saved birthday profile, using default', e);
+      }
+    }
     return generateBirthdayProfile('');
   });
 
@@ -43,14 +56,18 @@ export default function App() {
   const [isBulbHovered, setIsBulbHovered] = useState(false);
   const [isHangingHovered, setIsHangingHovered] = useState(false);
 
-  // Name Input on Intro screen - starts empty
-  const [nameInput, setNameInput] = useState('');
+  // Name Input on Intro screen - initialize from saved data if present
+  const [nameInput, setNameInput] = useState(() => data.recipientName || '');
 
   // Save changes to local storage
   const handleSavePersonalization = (updatedData: BirthdayData) => {
     setData(updatedData);
     setNameInput(updatedData.recipientName);
-    localStorage.setItem('cutiepage_birthday_data', JSON.stringify(updatedData));
+    try {
+      localStorage.setItem('birthday_surprise_data', JSON.stringify(updatedData));
+    } catch (e) {
+      console.warn('Failed to save birthday data to localStorage', e);
+    }
   };
 
   // Quick name setter from intro screen
@@ -58,7 +75,11 @@ export default function App() {
     setNameInput(newName);
     const updatedProfile = generateBirthdayProfile(newName);
     setData(updatedProfile);
-    localStorage.setItem('cutiepage_birthday_data', JSON.stringify(updatedProfile));
+    try {
+      localStorage.setItem('birthday_surprise_data', JSON.stringify(updatedProfile));
+    } catch (e) {
+      console.warn('Failed to save birthday data to localStorage', e);
+    }
   };
 
   // Evasive "No" button logic
@@ -672,7 +693,7 @@ export default function App() {
       {/* Bottom Footer */}
       <footer className="w-full py-3 px-4 flex items-center justify-between z-20 text-xs text-stone-500 dark:text-stone-400 select-none bg-white/30 dark:bg-stone-950/30 backdrop-blur-xs border-t border-stone-200/30 dark:border-stone-800/30">
         <div className="flex items-center gap-1.5 font-sans-ui text-[11px]">
-          <span>© Cutiepage Keepsake</span>
+          <span>© Birthday Surprise Keepsake</span>
           <span>•</span>
           <span className="text-pink-600 dark:text-pink-400 font-medium">
             {data.recipientName && data.recipientName !== 'Birthday Star'
