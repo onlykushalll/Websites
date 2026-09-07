@@ -42,3 +42,9 @@ Thumbs.db
 # Agent logs and temporary traces
 .agents/
 */.agents/
+
+
+# AI & Session residue
+.claude/
+.codex/
+*.handoff.md
