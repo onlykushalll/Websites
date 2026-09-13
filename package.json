@@ -6,8 +6,6 @@
   "license": "UNLICENSED",
   "workspaces": [
     "~Aura",
-    "~Birthday-Surprise",
-    "~DCOZI",
     "~KairosAi",
     "~NeoNax",
     "~Som",

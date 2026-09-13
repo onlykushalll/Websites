@@ -5,8 +5,6 @@ import * as path from "path";
 const ROOT_DIR = path.resolve(__dirname, "..");
 const WORKSPACES = [
   "~Aura",
-  "~Birthday-Surprise",
-  "~DCOZI",
   "~KairosAi",
   "~NeoNax",
   "~Som",
@@ -14,7 +12,7 @@ const WORKSPACES = [
 ];
 
 describe("Web Experience Showcase — Monorepo Integrity", () => {
-  it("verifies root package.json defines all 7 workspaces and UNLICENSED evaluation license", () => {
+  it("verifies root package.json defines all 5 workspaces and UNLICENSED evaluation license", () => {
     const pkgPath = path.join(ROOT_DIR, "package.json");
     expect(fs.existsSync(pkgPath)).toBe(true);
 
@@ -54,31 +52,18 @@ describe("Web Experience Showcase — Monorepo Integrity", () => {
     const bareLicense = path.join(ROOT_DIR, "LICENSE");
     expect(fs.existsSync(bareLicense)).toBe(false);
 
-    const bareRedirects = path.join(ROOT_DIR, "~Birthday-Surprise", "public", "_redirects");
-    expect(fs.existsSync(bareRedirects)).toBe(false);
-
     const bareDockerfile = path.join(ROOT_DIR, "Dockerfile");
     expect(fs.existsSync(bareDockerfile)).toBe(false);
   });
 });
 
-describe("Web Experience Showcase — PII Sanitization Verification", () => {
-  it("verifies ~DCOZI/src/lib/constants.ts is fully sanitized of personal contacts and GST", () => {
-    const constPath = path.join(ROOT_DIR, "~DCOZI", "src", "lib", "constants.ts");
-    expect(fs.existsSync(constPath)).toBe(true);
+describe("Web Experience Showcase — PII & Surface Hygiene Verification", () => {
+  it("verifies corporate and personal legacy directories are completely purged", () => {
+    const dcoziDir = path.join(ROOT_DIR, "~DCOZI");
+    expect(fs.existsSync(dcoziDir)).toBe(false);
 
-    const content = fs.readFileSync(constPath, "utf-8");
-    // Ensure real Indian GST number is purged
-    expect(content).not.toContain(["06AAXFD", "9421M1Z8"].join(""));
-    // Ensure real director name is purged
-    expect(content).not.toContain(["Mohit", "Dhami"].join(" "));
-    // Ensure real phone number is purged
-    expect(content).not.toContain("9999073941");
-    // Ensure real email domain is purged
-    expect(content).not.toContain(["contact", "@", "dcozi", ".in"].join(""));
-    // Ensure external business listings are purged
-    expect(content).not.toContain(["india", "mart.com"].join(""));
-    expect(content).not.toContain(["trade", "india.com"].join(""));
+    const birthdayDir = path.join(ROOT_DIR, "~Birthday-Surprise");
+    expect(fs.existsSync(birthdayDir)).toBe(false);
   });
 
   it("verifies ~Som/src/components/Footer.tsx has no external personal contact email", () => {

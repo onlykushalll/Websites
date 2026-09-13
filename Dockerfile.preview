@@ -8,8 +8,6 @@ COPY package.json ./
 
 # Copy all project packages
 COPY ~Aura ./~Aura
-COPY ~Birthday-Surprise ./~Birthday-Surprise
-COPY ~DCOZI ./~DCOZI
 COPY ~KairosAi ./~KairosAi
 COPY ~NeoNax ./~NeoNax
 COPY ~Som ./~Som
