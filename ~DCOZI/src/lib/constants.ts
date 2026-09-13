@@ -5,17 +5,17 @@
 
 export const COMPANY = {
   name: "Dcozi Enterprises",
-  tagline: "India's Leading Digital Podium & Industrial Locker Manufacturer",
-  gst: "06AAXFD9421M1Z8",
-  location: "IMT Manesar, Gurugram, Haryana",
-  address: "Plot No. 31, Sector 6, IMT Manesar, Gurugram – 122050, Haryana",
-  phone: "+91-9999073941",
-  whatsapp: "9999073941",
-  email: "contact@dcozi.in",
-  director: "Mohit Dhami",
+  tagline: "High-Performance Digital Podium & Industrial Locker Systems",
+  gst: "00XXXXX0000X0Z0",
+  location: "Industrial Corridor, Tech Zone",
+  address: "Facility 4, Sector 12, Enterprise Manufacturing Hub",
+  phone: "+1 (555) 019-2834",
+  whatsapp: "+1 (555) 019-2834",
+  email: "inquiries#dcozi.internal",
+  director: "Operations Directorate",
   established: 2021,
-  indiamart: "https://www.indiamart.com/dcozi-enterprises/",
-  trustLink: "https://www.tradeindia.com/truststamp-member/Dcozi-Enteprises-47850329/",
+  indiamart: "#",
+  trustLink: "#",
 };
 
 export interface Product {

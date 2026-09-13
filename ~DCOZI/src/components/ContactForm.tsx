@@ -57,7 +57,7 @@ export default function ContactForm() {
                 <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-700 ml-1">Full Name</label>
                 <input 
                   type="text" 
-                  placeholder="Rahul Sharma"
+                  placeholder="Enterprise Lead"
                   className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-gold focus:outline-none transition-all placeholder:text-slate-500 text-sm text-slate-900" 
                 />
               </div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
                 <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-700 ml-1">Business Email</label>
                 <input 
                   type="email" 
-                  placeholder="rahul@company.com"
+                  placeholder="Enter corporate email"
                   className="w-full px-6 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:border-brand-gold focus:outline-none transition-all placeholder:text-slate-500 text-sm text-slate-900" 
                 />
               </div>

@@ -22,7 +22,6 @@ If a showcase includes an interactive demo form, data submitted is either:
 
 ---
 
-## 3. Contact
+## 3. Contact & Inquiries
 
-For inquiries regarding these portfolio designs, please open an issue on our GitHub repository:
-https://github.com/onlykushalll/Websites
+For inquiries regarding these portfolio architectures, please direct communications through authorized evaluation channels.

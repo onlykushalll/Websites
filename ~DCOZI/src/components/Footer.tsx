@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="flex border border-slate-200 bg-white p-1 rounded-xl shadow-sm">
               <input 
                 type="email" 
-                placeholder="email@address.com"
+                placeholder="Enter corporate email"
                 className="bg-transparent px-4 py-2 text-xs flex-grow focus:outline-none text-slate-900" 
               />
               <button className="px-4 py-2 bg-brand-gold text-white text-xs font-bold rounded-lg hover:bg-black transition-colors">Join</button>

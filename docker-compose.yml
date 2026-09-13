@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  showcase-preview:
+    build:
+      context: .
+      dockerfile: Dockerfile.preview
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+      - "5174:5174"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

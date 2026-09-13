@@ -25,6 +25,6 @@ IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY DAMAGES ARISING OUT OF THE USE O
 
 ---
 
-## 4. License
+## 4. License & Commercial Evaluation
 
-Open-source portions are licensed under the MIT License as noted in the repository root.
+All source code, 3D models, shaders, and architectures are governed exclusively by the [Proprietary Commercial Source & Evaluation License](./LICENSE.md). All rights reserved.

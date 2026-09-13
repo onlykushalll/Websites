@@ -1,6 +1,6 @@
 # Web Experience Showcase — Multi-Project Portfolio
 
-Welcome to the **Web Experience Showcase**, a curated collection of five premium, production-ready web applications demonstrating state-of-the-art interactive front-ends, advanced layouts, immersive 3D/WebGL experiences, and highly responsive user interfaces. 
+Welcome to the **Web Experience Showcase**, a curated collection of seven premium, production-ready web applications demonstrating state-of-the-art interactive front-ends, advanced layouts, immersive 3D/WebGL experiences, and highly responsive user interfaces. 
 
 Each project serves as an architectural template for modern, high-performance web development.
 
@@ -28,33 +28,34 @@ Ensure you have the following installed on your local environment:
 - **Node.js** (v18.0.0 or higher recommended)
 - **npm** (v9.0.0+), **Yarn**, or **Bun**
 
-### General Setup & Installation
+### Monorepo & Workspaces
 
-Each folder is configured as a standalone application. To set up any of the websites, navigate into the respective directory and follow these steps:
+The root repository provides unified workspace management and automated smoke test validation:
 
-1. **Install Dependencies:**
-   ```bash
-   cd ~Aura    # Replace with any of the 5 folders
-   npm install
-   ```
+```bash
+# Run automated showcase verification across all 7 projects
+bun test
 
-2. **Start the Development Server:**
-   ```bash
-   npm run dev
-   ```
-   Open the port shown in your terminal (typically `http://localhost:5173` or similar) to view the application.
+# Or inspect individual showcase applications:
+cd ~Aura    # Or any of the 7 project folders
+bun install
+bun run dev
+```
 
-3. **Build for Production:**
-   ```bash
-   npm run build
-   ```
-   This generates an optimized static bundle in the project's `dist` or `.next` folder.
+### Production Build
+
+```bash
+cd ~Aura    # Or ~KairosAi, ~DCOZI, etc.
+bun run build
+```
+
+This generates an optimized static bundle in the project's `dist` or `.next` folder.
 
 ---
 
 ## 🛠️ Global Technology Stack
 
-Across the five websites, the codebase implements:
+Across the seven websites, the codebase implements:
 - **Frameworks:** [React](https://react.dev/), [Next.js](https://nextjs.org/) (App Router)
 - **Styling:** Vanilla CSS, [Tailwind CSS](https://tailwindcss.com/)
 - **Animation & 3D:** [Three.js](https://threejs.org/), [@react-three/fiber](https://r3.docs.pmnd.rs/getting-started/introduction), [GSAP](https://gsap.com/), [Framer Motion](https://www.framer.com/motion/)
@@ -64,8 +65,4 @@ Across the five websites, the codebase implements:
 
 ## 📄 License & Terms
 
-All code within this repository is open-source and licensed under the **MIT License**. For details, please refer to the root [LICENSE](./LICENSE) file.
-
-## 🤝 Contribution Guidelines
-
-We welcome contributions, bug fixes, and feature enhancements. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for details on codebase standards, formatting, and branch structure.
+All code and digital assets within this repository are proprietary and licensed under the [Proprietary Commercial Source & Evaluation License](./LICENSE.md). For details, please refer to the root `LICENSE.md` file.

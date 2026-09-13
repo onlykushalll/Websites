@@ -1,0 +1,29 @@
+# Multi-Project Showcase Container
+FROM oven/bun:1.1-slim AS builder
+
+WORKDIR /app
+
+# Copy monorepo configuration
+COPY package.json ./
+
+# Copy all project packages
+COPY ~Aura ./~Aura
+COPY ~Birthday-Surprise ./~Birthday-Surprise
+COPY ~DCOZI ./~DCOZI
+COPY ~KairosAi ./~KairosAi
+COPY ~NeoNax ./~NeoNax
+COPY ~Som ./~Som
+COPY ~Valentime ./~Valentime
+
+# Run automated showcase verification tests
+COPY tests ./tests
+RUN bun test tests/showcase.test.ts
+
+# Production preview stage
+FROM node:20-alpine AS runner
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=builder /app /app
+
+EXPOSE 3000 5173 5174
+CMD ["serve", "-s", "~Aura/dist", "-l", "3000"]

@@ -1,0 +1,25 @@
+{
+  "name": "@showcase/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production Web Experience Showcase & Multi-Project Frontend Portfolio",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "~Aura",
+    "~Birthday-Surprise",
+    "~DCOZI",
+    "~KairosAi",
+    "~NeoNax",
+    "~Som",
+    "~Valentime"
+  ],
+  "scripts": {
+    "test": "bun test tests/showcase.test.ts",
+    "test:all": "bun test",
+    "clean": "rm -rf node_modules */node_modules"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.8.0"
+  }
+}

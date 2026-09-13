@@ -55,9 +55,7 @@ The experience progresses seamlessly through 10 interactive stages:
 │   ├── index.html
 │   ├── _redirects
 │   └── assets/
-├── public/
-│   └── _redirects              # Netlify SPA redirect rules
-├── netlify.toml                # Netlify deployment configuration
+├── netlify.toml                # Netlify deployment configuration & SPA redirects
 ├── package.json                # Project dependencies & npm scripts
 ├── tsconfig.json               # TypeScript configuration
 ├── vite.config.ts              # Vite + Tailwind v4 build configuration

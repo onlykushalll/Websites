@@ -21,7 +21,7 @@ const Footer = () => {
           
           <div className="text-right">
             <div className="text-[10px] uppercase tracking-widest text-white/40 mb-2">Contact</div>
-            <a href="mailto:hello@drinksom.eu" className="text-sm font-bold hover:underline">hello@drinksom.eu</a>
+            <a href="#contact" className="text-sm font-bold hover:underline">inquiries[at]som-beverage.internal</a>
           </div>
         </div>
         
