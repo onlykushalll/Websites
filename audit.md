@@ -63,7 +63,7 @@ Total findings by severity: P0 [0] · P1 [1] · P2 [3] · P3 [2]
 
 #### Missing Subresource Integrity (SRI) on External CDN Assets
 - **Category:** Security
-- **Location:** `~DCOZI/index.html`, `~Som/index.html`
+- **Location:** `~Som/index.html` and related showcase HTML entrypoints
 - **Issue:** External stylesheet and font imports link to third-party CDNs without `integrity="sha384-..."` attributes.
 - **User impact:** If a CDN endpoint is compromised, attackers could inject malicious scripts into visiting browsers.
 - **Fix:** Add SRI hashes and `crossorigin="anonymous"` to all third-party script and stylesheet tags.

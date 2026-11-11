@@ -2,7 +2,16 @@
 
 Welcome to the **Web Experience Showcase**, a curated collection of five premium, production-ready web applications demonstrating state-of-the-art interactive front-ends, advanced layouts, immersive 3D/WebGL experiences, and highly responsive user interfaces. 
 
-Each project serves as an architectural template for modern, high-performance web development.
+This showcase bundle demonstrates production architectures spanning luxury 3D e-commerce (**~Aura**), autonomous AI platform UX (**~KairosAi**), WebGL material engineering (**~NeoNax**), beverage launch waitlists (**~Som**), and interactive storytelling (**~Valentime**).
+
+```mermaid
+flowchart TB
+    Root["@showcase/monorepo<br/>bun test + Workspace Orchestrator"] --> Aura["~Aura<br/>Vite + React Three Fiber + GSAP + GLB"]
+    Root --> Kairos["~KairosAi<br/>Next.js 16 + Prisma + WebGL Particles"]
+    Root --> NeoNax["~NeoNax<br/>Vite + Three.js + shadcn/ui"]
+    Root --> Som["~Som<br/>Vite + Three.js + Supabase Waitlist API"]
+    Root --> Val["~Valentime<br/>React 19 + Vite + Motion"]
+```
 
 ---
 
@@ -61,6 +70,13 @@ Across the five websites, the codebase implements:
 
 ---
 
-## 📄 License & Terms
+## 📄 Commercial Licensing & IP Acquisition
 
-All code and digital assets within this repository are proprietary and licensed under the [Proprietary Commercial Source & Evaluation License](./LICENSE.md). For details, please refer to the root `LICENSE.md` file.
+Copyright (c) 2026 Kushal (@onlykushalll). All Rights Reserved.  
+All code and digital assets within this repository are proprietary and licensed under the [Proprietary Commercial Source & Evaluation License](./LICENSE.md).
+
+Available for commercial licensing, technical due diligence, and full IP acquisition.  
+**Acquisition & Licensing Contact:** `creatormanager27@gmail.com` · GitHub: `https://github.com/onlykushalll`
+
+### Third-Party Open-Source Carve-Out
+Upstream frameworks and runtime dependencies (React, Next.js, Vite, Three.js, React Three Fiber, Framer Motion, Tailwind CSS, Prisma, GSAP under its standard license) remain governed by their respective upstream terms. See [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) for monorepo engineering details.

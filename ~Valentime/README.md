@@ -22,3 +22,9 @@ An interactive, beautifully animated website to ask your crush to be your Valent
 3. Build for production:
    `npm run build`
 
+---
+
+## License
+
+Proprietary Commercial Source & Evaluation Asset — see root [LICENSE.md](../LICENSE.md) (Contact: `creatormanager27@gmail.com`). Third-party packages remain under their respective upstream open-source licenses.
+

@@ -1,15 +1,25 @@
 # Dependency directories
 node_modules/
-jspm_packages/
-web_modules/
+/jspm_packages/
+/web_modules/
 
 # Build outputs
 dist/
 build/
 .next/
 out/
+target/
 .docusaurus/
 .cache/
+
+# Python & virtual environments
+.venv/
+__pycache__/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
 
 # Debug and Logs
 npm-debug.log*
@@ -37,12 +47,17 @@ Thumbs.db
 .env.test.local
 .env.production.local
 *.env
+!.env.example
 *.bak
+
+# Reserved exclusions
+dcozi/
+~dcozi/
+~DCOZI/
 
 # Agent logs and temporary traces
 .agents/
 */.agents/
-
 
 # AI & Session residue
 .claude/

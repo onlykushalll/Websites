@@ -9,7 +9,7 @@ Please read these Terms of Service ("Terms") before using or viewing the website
 ## 1. Intellectual Property & Design Rights
 
 - All design systems, custom layout compositions, brand concepts, and frontend animations contained in this repository are protected by copyright and intellectual property laws.
-- You may review the code for personal study and inspiration. Unauthorized commercial re-branding or resale of full client designs without permission is prohibited.
+- Access is restricted to authorized commercial evaluation, due diligence, and acquisition review. Unauthorized redistribution, re-branding, or resale without written permission is prohibited.
 
 ---
 

@@ -2,8 +2,8 @@
 
 ## Architecture
 - Dual project audit and humanization pipeline.
-- Target 1: `C:\Users\Default.L-HCG-9FVVGS3\Downloads\sitegen-ai` (React 19 / Vite 6 / TypeScript / Tailwind v4 Web Application)
-- Target 2: `c:\Users\Default.L-HCG-9FVVGS3\OneDrive\Desktop\Utilities\SIa` (FocusBuddy WebGL / Three.js / GSAP Web Application)
+- Target 1: `~Valentime` / Valentine Proposal Web Application (React 19 / Vite 6 / TypeScript / Tailwind v4)
+- Target 2: Paired WebGL / Three.js / GSAP showcase template audit
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |

@@ -96,4 +96,4 @@ Ensure you have [Bun](https://bun.sh/) or [Node.js](https://nodejs.org/) install
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the root [LICENSE](../LICENSE) file for details.
+Proprietary Commercial Source & Evaluation Asset — see root [LICENSE.md](../LICENSE.md) (Contact: `creatormanager27@gmail.com`). Third-party packages remain under their respective upstream open-source licenses.
